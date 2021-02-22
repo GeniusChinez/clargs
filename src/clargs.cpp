@@ -36,7 +36,8 @@ namespace clargs {
                 do {
                     name += *iter++;
                 } while (
-                    (iter != end) && (std::isalnum(*iter) || *iter == '_')
+                    (iter != end) && 
+                    (std::isalnum(*iter) || *iter == '_' || *iter == '-')
                 );
             }
             return name;
