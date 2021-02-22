@@ -14,12 +14,12 @@ namespace clargs {
         return temp->second == "true";
     }
 
-    const std::vector<std::string>& Arguments::get_stray_values() {
-        return stray_values;
+    const std::vector<std::string>& Arguments::get_naked_values() {
+        return naked_values;
     }
 
     void Arguments::clear() {
-        stray_values.clear();
+        naked_values.clear();
         key_values.clear();
     }
 
@@ -47,7 +47,7 @@ namespace clargs {
             auto item_iter = std::begin(item);
 
             if (*item_iter++ != '-') {
-                stray_values.push_back(std::move(item));
+                naked_values.push_back(std::move(item));
                 source_position++;
                 continue;
             }

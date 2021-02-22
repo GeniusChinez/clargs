@@ -13,7 +13,7 @@ namespace clargs {
         Arguments() = default;
 
         bool is_set(std::string_view) const;
-        const std::vector<std::string>& get_stray_values();
+        const std::vector<std::string>& get_naked_values();
 
         void clear();
         void parse(std::size_t, char* const[]);
@@ -25,7 +25,7 @@ namespace clargs {
         void report_error(std::size_t, Args&&...);
 
         std::map<std::string, std::string> key_values;
-        std::vector<std::string> stray_values;
+        std::vector<std::string> naked_values;
     };
 
     Arguments get_arguments(std::size_t, char* const[]);
