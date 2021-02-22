@@ -137,6 +137,10 @@ namespace clargs {
         exit(position + 1);
     }
 
+    void Arguments::remove_first_naked_value() {
+        naked_values.erase(naked_values.begin());
+    }
+
     Arguments get_arguments(std::size_t number_of, char* const source[]) {
         Arguments arguments;
         arguments.parse(number_of, source);

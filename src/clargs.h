@@ -20,6 +20,8 @@ namespace clargs {
 
         std::optional<std::string_view> get_value_of(const std::string&);
 
+        void remove_first_naked_value();
+
     private:
         template <typename ...Args>
         void report_error(std::size_t, Args&&...);
