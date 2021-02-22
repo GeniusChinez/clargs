@@ -14,7 +14,7 @@ namespace clargs {
         return temp->second == "true";
     }
 
-    const std::vector<std::string>& Arguments::get_naked_values() {
+    const std::vector<std::string>& Arguments::get_naked_values() const {
         return naked_values;
     }
 
@@ -118,9 +118,9 @@ namespace clargs {
         }
     }
 
-    std::optional<std::string_view> Arguments::get_value_of(
+    const std::optional<std::string_view> Arguments::get_value_of(
         const std::string& name
-    ) {
+    ) const {
         if (auto temp = key_values.find(name); 
             temp != key_values.end()
         ) {

@@ -13,12 +13,14 @@ namespace clargs {
         Arguments() = default;
 
         bool is_set(std::string_view) const;
-        const std::vector<std::string>& get_naked_values();
+        const std::vector<std::string>& get_naked_values() const;
 
         void clear();
         void parse(std::size_t, char* const[]);
 
-        std::optional<std::string_view> get_value_of(const std::string&);
+        const std::optional<std::string_view> get_value_of(
+            const std::string&
+        ) const;
 
         void remove_first_naked_value();
 
