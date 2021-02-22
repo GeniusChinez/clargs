@@ -2,6 +2,6 @@
 #include <iostream>
 
 int main(int argc, char* const argv[]) {
-    clargs::Arguments args;
-    args.parse(argc, argv);
+    auto args = clargs::get_arguments(argc, argv);
+
 }

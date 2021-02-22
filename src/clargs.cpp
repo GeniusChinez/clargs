@@ -135,4 +135,10 @@ namespace clargs {
         std::cout << "\n";
         exit(position + 1);
     }
+
+    Arguments get_arguments(std::size_t number_of, char* const source[]) {
+        Arguments arguments;
+        arguments.parse(number_of, source);
+        return arguments;
+    }
 }

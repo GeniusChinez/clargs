@@ -27,4 +27,6 @@ namespace clargs {
         std::map<std::string, std::string> key_values;
         std::vector<std::string> stray_values;
     };
+
+    Arguments get_arguments(std::size_t, char* const[]);
 }
